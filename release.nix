@@ -9,13 +9,28 @@ let
     then args.pkgs
     else (import nixpkgs { config = {}; });
 
+  # node2nix = localNodePackages.node2nix;
+
+  node2nixSrc = pkgs.fetchFromGitHub {
+    owner = "svanderburg";
+    repo = "node2nix";
+    # <https://github.com/svanderburg/node2nix/releases/tag/node2nix-1.10.0>
+    rev = "0deb18a0b62669e62f34cd60286f38f4ac4bf0e8";
+    sha256 = "13dqqv53fkzizjzi6ixv0si584s1cvrsyqkcxi7p7rvlziawlsaz";
+  };
+  node2nix = (import (node2nixSrc + "/release.nix") { inherit nixpkgs; }).package."${pkgs.system}";
+
   localNodeJs = pkgs.nodejs;
+  # TODO: This is still failing even when using node2nix-1.10.0.
+  # localNodeJs = pkgs.nodejs-16_x;
+
   localNodePackages = pkgs.callPackage ./.nix/node-packages { nodejs = localNodeJs; };
   commonShellDeps = with pkgs; [
+    gnumake
     localNodeJs
-    localNodePackages.node2nix
-    localNodePackages.npm
-    localNodePackages.typescript
+    # node2nix
+    # localNodePackages.npm
+    # localNodePackages.typescript
     localNodePackages.ts-node
   ];
 
@@ -50,6 +65,7 @@ with pkgs;
 rec {
   inherit nixpkgs;
   inherit pkgs;
+  inherit node2nix;
 
   shell = {
     dev = pkgs.mkShell rec {
