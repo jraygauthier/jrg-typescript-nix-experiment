@@ -1,0 +1,5 @@
+/.nix/node-packages/result
+/node_modules
+/node_modules/
+/npm_config_prefix
+/npm_config_prefix/
