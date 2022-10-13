@@ -21,7 +21,7 @@ let
   # version (e.g.: `16.13.1`).
   /*
   buildNodeJs = pkgs.callPackage (pkgs.path + "/pkgs/development/web/nodejs/nodejs.nix") {
-    python = pkgs.python3;
+    python = python3;
   };
 
   projectNodejsVersion = lib.fileContents ./.nvmrc;
@@ -34,15 +34,15 @@ let
 
   # Use a stable version for which hydra can provide binary substitution
   # instead.
-  projectNodeJs = nodejs-14_x;
+  # projectNodeJs = nodejs-14_x;
 
   # TODO: This is still failing.
-  # projectNodeJs = pkgs.nodejs;
+  # projectNodeJs = nodejs;
   # TODO: This is still failing even when using node2nix-1.10.0.
-  # projectNodeJs = pkgs.nodejs-16_x;
+  projectNodeJs = nodejs-16_x;
 
-  projectNodePackages = pkgs.callPackage ./.nix/node2nix { nodejs = projectNodeJs; };
-  commonShellDeps = with pkgs; [
+  projectNodePackages = callPackage ./.nix/node2nix { nodejs = projectNodeJs; };
+  commonShellDeps = [
     coreutils
     gnumake
     projectNodeJs
@@ -53,14 +53,11 @@ let
 
   NPM_CONFIG_PREFIX = toString ./.npm;
 
-  localNodeModules = builtins.toString ./node_modules;
 in
-
-with pkgs;
 
 rec {
   shell = {
-    dev = pkgs.mkShell rec {
+    dev = mkShell rec {
       packages = [
       ] ++ commonShellDeps;
 
@@ -68,7 +65,7 @@ rec {
 
       shellHook = ''
         # Add local node and npm globally built packages to PATH.
-        export PATH="${localNodeModules}/.bin:${NPM_CONFIG_PREFIX}/bin:$PATH"
+        export PATH="${NPM_CONFIG_PREFIX}/bin:$PATH"
       '';
     };
   };

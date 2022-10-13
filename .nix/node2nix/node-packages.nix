@@ -40,6 +40,159 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
+    "@swc/core-1.3.7" = {
+      name = "_at_swc_slash_core";
+      packageName = "@swc/core";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.3.7.tgz";
+        sha512 = "g4ptYRZRE+g/6wLB3WBuWhAWJsZDUeiSOvKVM1Wdn29Vi/EgLuVaY5ssz0HLQJxuDSJGwtAOZA8exh4+AKNHLw==";
+      };
+    };
+    "@swc/core-android-arm-eabi-1.3.7" = {
+      name = "_at_swc_slash_core-android-arm-eabi";
+      packageName = "@swc/core-android-arm-eabi";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-android-arm-eabi/-/core-android-arm-eabi-1.3.7.tgz";
+        sha512 = "zvUpTBOUnXDkfp2JXv1T3NfyimxsAnqEfT65gWC/3ZpB/gmc59vqYVko4Pifyvuxo5aVvEdT2gfHlWM/aXwtpg==";
+      };
+    };
+    "@swc/core-android-arm64-1.3.7" = {
+      name = "_at_swc_slash_core-android-arm64";
+      packageName = "@swc/core-android-arm64";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-android-arm64/-/core-android-arm64-1.3.7.tgz";
+        sha512 = "qnh1aYTrIjuFOkgxUYG8SGzpPD92o/w5hrHUy71LfUbHf5HRs7FpMgQXtTGnk33S/uMCvSv7V/ewv+t+N6tlVA==";
+      };
+    };
+    "@swc/core-darwin-arm64-1.3.7" = {
+      name = "_at_swc_slash_core-darwin-arm64";
+      packageName = "@swc/core-darwin-arm64";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.7.tgz";
+        sha512 = "q8NgUK/CleCmGYIuskL1sCad8opkfJD/8GWd+MkGSi+MGkExrLMmJftgG5FCj0l/xCHxGGNYj1TCrM/qV6CheA==";
+      };
+    };
+    "@swc/core-darwin-x64-1.3.7" = {
+      name = "_at_swc_slash_core-darwin-x64";
+      packageName = "@swc/core-darwin-x64";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.3.7.tgz";
+        sha512 = "dKrJkZYbF7Qi1wQgyVnR1a5Vk8UN7fJ/WlK6pZVJwMvWLoZgYE+U0Nn7RsVB4LmOxHtaJF7eesbGUm2y2NVEwA==";
+      };
+    };
+    "@swc/core-freebsd-x64-1.3.7" = {
+      name = "_at_swc_slash_core-freebsd-x64";
+      packageName = "@swc/core-freebsd-x64";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-freebsd-x64/-/core-freebsd-x64-1.3.7.tgz";
+        sha512 = "ENHthc4iFPlBj0xaf2DbJLDzYSBA4QMQEA2HhZoSWWMsqhg8mGZxwgRd6+loROGZ2a5HKMZXIxCev8BbYnE0OA==";
+      };
+    };
+    "@swc/core-linux-arm-gnueabihf-1.3.7" = {
+      name = "_at_swc_slash_core-linux-arm-gnueabihf";
+      packageName = "@swc/core-linux-arm-gnueabihf";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.7.tgz";
+        sha512 = "anE65tcRLr/fYayXkpwZ7p7Ft5HCH4rvi3wSFdK8ycRWn9fVZhyWUJkJ3p1S0R19xr7hcb14hyxqPbd4m0I4yA==";
+      };
+    };
+    "@swc/core-linux-arm64-gnu-1.3.7" = {
+      name = "_at_swc_slash_core-linux-arm64-gnu";
+      packageName = "@swc/core-linux-arm64-gnu";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.7.tgz";
+        sha512 = "Qv6f76Tt8t51qb29R2isWvuQM26Xi7ZJavAv0hMdCxfkF+h1Yd14j82H7afGzdONH1LyLaPrhWSQirU/ZtBtdA==";
+      };
+    };
+    "@swc/core-linux-arm64-musl-1.3.7" = {
+      name = "_at_swc_slash_core-linux-arm64-musl";
+      packageName = "@swc/core-linux-arm64-musl";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.7.tgz";
+        sha512 = "paYbmvm7+7QxjyMzRd4X4tyhHw5VgkGCMBYC3PbfpuI7SsCdmEFG9v1t5uMbTf60VU1wB4/n+AxY9KCZLfK7DQ==";
+      };
+    };
+    "@swc/core-linux-x64-gnu-1.3.7" = {
+      name = "_at_swc_slash_core-linux-x64-gnu";
+      packageName = "@swc/core-linux-x64-gnu";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.7.tgz";
+        sha512 = "tkIHt64mmqEVM0CTGvUsB37Pv7AD/BinOEe6oPfMcS/2a00kYvXn9kEVKPqNTpiFpjYGoFQJaVV8UsD+iv8IvQ==";
+      };
+    };
+    "@swc/core-linux-x64-musl-1.3.7" = {
+      name = "_at_swc_slash_core-linux-x64-musl";
+      packageName = "@swc/core-linux-x64-musl";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.7.tgz";
+        sha512 = "V0xeTS8kvnTlghO1YyO1QgfPqsY896MknYCzBeK9CGKkGbc3JaxSoyb11nbGEDEaUwzDd9gj9L4D2uP+IWpoyw==";
+      };
+    };
+    "@swc/core-win32-arm64-msvc-1.3.7" = {
+      name = "_at_swc_slash_core-win32-arm64-msvc";
+      packageName = "@swc/core-win32-arm64-msvc";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.7.tgz";
+        sha512 = "LeauQIok8tw4Mjmj7wlc7C62HCUx3xa5k6tNQnKWbDs7odZVWisgDxn7RSl9/xxlC8wPLTVUyBh3O1rHigVfWg==";
+      };
+    };
+    "@swc/core-win32-ia32-msvc-1.3.7" = {
+      name = "_at_swc_slash_core-win32-ia32-msvc";
+      packageName = "@swc/core-win32-ia32-msvc";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.7.tgz";
+        sha512 = "E1C8bpUrml0vIv4FTSP7f4CwkZVGsCY9fBsBHCC4j9N1mtQk8/nzpGOUsPo4QP+FTYJiNKedZ4Cy7baihnV4Lw==";
+      };
+    };
+    "@swc/core-win32-x64-msvc-1.3.7" = {
+      name = "_at_swc_slash_core-win32-x64-msvc";
+      packageName = "@swc/core-win32-x64-msvc";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.7.tgz";
+        sha512 = "Ti9H/1hqBrxhYtNLVaLsahO/iiJn1Zd4qSc0LZpl6wBJxP4LltLV4MLeib6i8lg11pj4ijIhzZfC6bT614ee3w==";
+      };
+    };
+    "@swc/wasm-1.2.122" = {
+      name = "_at_swc_slash_wasm";
+      packageName = "@swc/wasm";
+      version = "1.2.122";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.2.122.tgz";
+        sha512 = "sM1VCWQxmNhFtdxME+8UXNyPNhxNu7zdb6ikWpz0YKAQQFRGT5ThZgJrubEpah335SUToNg8pkdDF7ibVCjxbQ==";
+      };
+    };
+    "@swc/wasm-1.2.130" = {
+      name = "_at_swc_slash_wasm";
+      packageName = "@swc/wasm";
+      version = "1.2.130";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.2.130.tgz";
+        sha512 = "rNcJsBxS70+pv8YUWwf5fRlWX6JoY/HJc25HD/F8m6Kv7XhJdqPPMhyX6TKkUBPAG7TWlZYoxa+rHAjPy4Cj3Q==";
+      };
+    };
+    "@swc/wasm-1.3.7" = {
+      name = "_at_swc_slash_wasm";
+      packageName = "@swc/wasm";
+      version = "1.3.7";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.3.7.tgz";
+        sha512 = "s98rDhntKZU6MRKiUToE3psAmKlgJP18FIMFgP0nMslgrYwUJAYf9RaoYBOHTX46xWYDK0AXEbPbDUUSkEkJEQ==";
+      };
+    };
     "@tsconfig/node10-1.0.9" = {
       name = "_at_tsconfig_slash_node10";
       packageName = "@tsconfig/node10";
@@ -74,6 +227,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.3.tgz";
         sha512 = "yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==";
+      };
+    };
+    "@types/node-18.8.5" = {
+      name = "_at_types_slash_node";
+      packageName = "@types/node";
+      version = "18.8.5";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@types/node/-/node-18.8.5.tgz";
+        sha512 = "Bq7G3AErwe5A/Zki5fdD3O6+0zDChhg671NfPjtIcbtzDNZTv4NPKMRFr7gtYPG7y+B8uTiNK4Ngd9T0FTar6Q==";
       };
     };
     "abbrev-1.1.1" = {
@@ -1336,6 +1498,15 @@ let
         sha512 = "/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==";
       };
     };
+    "typescript-4.8.4" = {
+      name = "typescript";
+      packageName = "typescript";
+      version = "4.8.4";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz";
+        sha512 = "QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==";
+      };
+    };
     "uid-number-0.0.5" = {
       name = "uid-number";
       packageName = "uid-number";
@@ -1505,16 +1676,57 @@ in
       sources."@jridgewell/resolve-uri-3.1.0"
       sources."@jridgewell/sourcemap-codec-1.4.14"
       sources."@jridgewell/trace-mapping-0.3.9"
+      sources."@swc/core-1.3.7"
+      (sources."@swc/core-android-arm-eabi-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.122"
+        ];
+      })
+      (sources."@swc/core-android-arm64-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.130"
+        ];
+      })
+      sources."@swc/core-darwin-arm64-1.3.7"
+      sources."@swc/core-darwin-x64-1.3.7"
+      (sources."@swc/core-freebsd-x64-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.130"
+        ];
+      })
+      (sources."@swc/core-linux-arm-gnueabihf-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.130"
+        ];
+      })
+      sources."@swc/core-linux-arm64-gnu-1.3.7"
+      sources."@swc/core-linux-arm64-musl-1.3.7"
+      sources."@swc/core-linux-x64-gnu-1.3.7"
+      sources."@swc/core-linux-x64-musl-1.3.7"
+      (sources."@swc/core-win32-arm64-msvc-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.130"
+        ];
+      })
+      (sources."@swc/core-win32-ia32-msvc-1.3.7" // {
+        dependencies = [
+          sources."@swc/wasm-1.2.130"
+        ];
+      })
+      sources."@swc/core-win32-x64-msvc-1.3.7"
+      sources."@swc/wasm-1.3.7"
       sources."@tsconfig/node10-1.0.9"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.3"
+      sources."@types/node-18.8.5"
       sources."acorn-8.8.0"
       sources."acorn-walk-8.2.0"
       sources."arg-4.1.3"
       sources."create-require-1.1.1"
       sources."diff-4.0.2"
       sources."make-error-1.3.6"
+      sources."typescript-4.8.4"
       sources."v8-compile-cache-lib-3.0.1"
       sources."yn-3.1.1"
     ];

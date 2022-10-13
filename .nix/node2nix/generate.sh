@@ -13,10 +13,10 @@ trap "on_exit" EXIT SIGINT SIGQUIT
 
 rm -f ./node-env.nix
 
-declare pkg_name="local-node-packages"
+declare pkg_name="global-node-packages"
 
 declare extra_args=()
-declare extra_args=( "--nodejs-14" )
+declare extra_args=( "--nodejs-16" )
 
 "${node2nix}/bin/node2nix" \
     -i ./node-packages.json \
