@@ -5,7 +5,7 @@ script_dir="$(cd "$(dirname "$0")" && pwd)"
 cd "$script_dir"
 
 declare node2nix
-node2nix="$(nix-build -E '(import ../../release.nix {}).node2nix')"
+node2nix="$(nix-build -E '(import ../release.nix {}).pkgs.node2nix')"
 on_exit() {
   test ! -e "$script_dir/result" || unlink "$script_dir/result"
 }
@@ -14,10 +14,9 @@ trap "on_exit" EXIT SIGINT SIGQUIT
 rm -f ./node-env.nix
 
 declare pkg_name="local-node-packages"
-# declare pkg_name="nodejs-16_x"
 
-declare extra_args=[]
-# declare extra_args=[ "--nodejs-16" ]
+declare extra_args=()
+declare extra_args=( "--nodejs-14" )
 
 "${node2nix}/bin/node2nix" \
     -i ./node-packages.json \

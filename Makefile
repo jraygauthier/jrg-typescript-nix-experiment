@@ -1,7 +1,7 @@
 .PHONY: \
   all \
   clean \
-  nix-node-packages
+  node2nix
 
 
 
@@ -10,5 +10,5 @@ all:
 clean:
 
 
-nix-node-packages:
-	./.nix/node-packages/generate.sh
+node2nix:
+	./.nix/node2nix/generate.sh

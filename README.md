@@ -27,20 +27,20 @@ $ nix-shell
 
 ### Global node packages
 
-See `.nix/node-packages` for the global pinned set of node packages.
+See `.nix/node2nix` for the global pinned set of node packages.
 
 Adding a new package to the set should normally be as simple as adding this
-package to `.nix/node-packages/node-packages.json` and calling:
+package to `.nix/node2nix/node2nix.json` and calling:
 
 ```bash
-$ ./.nix/node-packages/generate.sh
+$ ./.nix/node2nix/generate.sh
 # ..
 ```
 
 or alternatively the following convenient make target:
 
 ```bash
-$ make nix-node-packages
+$ make node2nix
 # ..
 ```
 

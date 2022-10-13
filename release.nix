@@ -1,40 +1,20 @@
-{ pkgs ? null } @ args:
-
-let
-  nixpkgs = builtins.fetchTarball {
-    url = "https://github.com/nixos/nixpkgs/archive/f77036342e2b690c61c97202bf48f2ce13acc022.tar.gz";
-    sha256 = "1vcrb2s6ngfv0vy7nwlqdqhy1whlrck3ws4ifk5dfhmvdy3jqmr4";
-  };
-  pkgs = if args ? "pkgs"
-    then args.pkgs
-    else (import nixpkgs { config = {}; });
-
-  # node2nix = localNodePackages.node2nix;
-
-  node2nixSrc = pkgs.fetchFromGitHub {
-    owner = "svanderburg";
-    repo = "node2nix";
-    # <https://github.com/svanderburg/node2nix/releases/tag/node2nix-1.10.0>
-    rev = "0deb18a0b62669e62f34cd60286f38f4ac4bf0e8";
-    sha256 = "13dqqv53fkzizjzi6ixv0si584s1cvrsyqkcxi7p7rvlziawlsaz";
-  };
-  node2nix = (import (node2nixSrc + "/release.nix") { inherit nixpkgs; }).package."${pkgs.system}";
-
-  localNodeJs = pkgs.nodejs;
-  # TODO: This is still failing even when using node2nix-1.10.0.
-  # localNodeJs = pkgs.nodejs-16_x;
-
-  localNodePackages = pkgs.callPackage ./.nix/node-packages { nodejs = localNodeJs; };
-  commonShellDeps = with pkgs; [
-    gnumake
-    localNodeJs
-    # node2nix
-    # localNodePackages.npm
-    # localNodePackages.typescript
-    localNodePackages.ts-node
-  ];
+{pkgs ? null} @ args: let
+  repoRootDir = ./.;
+  pkgs =
+    (
+      import (
+        repoRootDir + "/.nix/release.nix"
+      ) {}
+    )
+    .ensurePkgs
+    args;
 
   lib = import (pkgs.path + "/lib");
+in
+
+with pkgs;
+
+let
   # Involve a pretty long build. Use in last resort and if so,
   # push binaries to a cache.
   # Depends on a `.nvmrc` file with as content, the desired node
@@ -44,38 +24,51 @@ let
     python = pkgs.python3;
   };
 
-  nodejsVersion = lib.fileContents ./.nvmrc;
-  nodejs = buildNodeJs {
+  projectNodejsVersion = lib.fileContents ./.nvmrc;
+  projectNodeJs = buildNodeJs {
     enableNpm = false;
-    version = nodejsVersion;
+    version = projectNodejsVersion;
     sha256 = "1bb3rjb2xxwn6f4grjsa7m1pycp0ad7y6vz7v2d7kbsysx7h08sc";
   };
   */
 
   # Use a stable version for which hydra can provide binary substitution
   # instead.
-  nodejs = pkgs.nodejs-slim-16_x;
+  projectNodeJs = nodejs-14_x;
 
-  NPM_CONFIG_PREFIX = toString ./npm_config_prefix;
+  # TODO: This is still failing.
+  # projectNodeJs = pkgs.nodejs;
+  # TODO: This is still failing even when using node2nix-1.10.0.
+  # projectNodeJs = pkgs.nodejs-16_x;
 
+  projectNodePackages = pkgs.callPackage ./.nix/node2nix { nodejs = projectNodeJs; };
+  commonShellDeps = with pkgs; [
+    coreutils
+    gnumake
+    projectNodeJs
+    projectNodePackages.npm
+    projectNodePackages.typescript
+    projectNodePackages.ts-node
+  ];
+
+  NPM_CONFIG_PREFIX = toString ./.npm;
+
+  localNodeModules = builtins.toString ./node_modules;
 in
 
 with pkgs;
 
 rec {
-  inherit nixpkgs;
-  inherit pkgs;
-  inherit node2nix;
-
   shell = {
     dev = pkgs.mkShell rec {
-      packages = with pkgs; [
+      packages = [
       ] ++ commonShellDeps;
 
       inherit NPM_CONFIG_PREFIX;
 
       shellHook = ''
-        export PATH="${NPM_CONFIG_PREFIX}/bin:$PATH"
+        # Add local node and npm globally built packages to PATH.
+        export PATH="${localNodeModules}/.bin:${NPM_CONFIG_PREFIX}/bin:$PATH"
       '';
     };
   };

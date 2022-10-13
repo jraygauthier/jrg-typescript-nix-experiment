@@ -1,0 +1,4 @@
+{
+  srcs,
+  pickedSrcs,
+}: self: super: {}
